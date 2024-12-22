@@ -35,7 +35,7 @@
 </head>
 <body>
     <h1>Merry Christmas</h1>
-    <p>Press the button to receive your gift</p>
+    <p id="message">Press the button to receive your gift</p>
     <button onclick="sendEmail()">Press Me</button>
 
     <script>
@@ -46,11 +46,11 @@
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
-                    service_id: 'YOUR_SERVICE_ID',
-                    template_id: 'YOUR_TEMPLATE_ID',
-                    user_id: 'YOUR_USER_ID',
+                    service_id: 'service_t8blc7h',
+                    template_id: 'template_2bukolw',
+                    user_id: 'vhpmgrlSDUBKS5tLZ',
                     template_params: {
-                        to_email: 'tsotne.karchava04@gmail.com',
+                        to_email: 'tsotne.karchava04@gmail.com, emilie.kaline@outlook.com',
                         subject: 'Button Pressed',
                         message: 'The button was pressed on your Christmas website.'
                     }
@@ -58,7 +58,7 @@
             })
             .then(response => {
                 if (response.ok) {
-                    alert('Your gift is on its way!');
+                    document.getElementById('message').innerText = 'Your gift is on its way!';
                 } else {
                     alert('Something went wrong. Please try again later.');
                 }
